@@ -9,3 +9,22 @@ the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the
 even-valued terms.
 """
+
+
+def fibonacci(x):
+    if x == 1:
+        return 1
+    if x == 2:
+        return 2
+    else:
+        return fibonacci(x - 1) + fibonacci(x - 2)
+
+
+fib_sum = 0
+i = 1
+while fibonacci(i) <= 4000000:
+    if fibonacci(i) % 2 == 0:
+        fib_sum += fibonacci(i)
+    i += 1
+
+print(fib_sum)
