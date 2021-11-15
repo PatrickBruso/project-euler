@@ -20,11 +20,16 @@ def fibonacci(x):
         return fibonacci(x - 1) + fibonacci(x - 2)
 
 
-fib_sum = 0
-i = 1
-while fibonacci(i) <= 4000000:
-    if fibonacci(i) % 2 == 0:
-        fib_sum += fibonacci(i)
-    i += 1
+def main():
+    fib_sum = 0
+    i = 1
+    while fibonacci(i) <= 4000000:
+        if fibonacci(i) % 2 == 0:
+            fib_sum += fibonacci(i)
+        i += 1
 
-print(fib_sum)
+    return fib_sum
+
+
+if __name__ == '__main__':
+    print(main())
