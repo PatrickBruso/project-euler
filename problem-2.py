@@ -9,15 +9,18 @@ the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the
 even-valued terms.
 """
+memo = {}  # Store previously computed fibonacci values for quicker computing
 
 
 def fibonacci(x):
-    if x == 1:
-        return 1
-    if x == 2:
-        return 2
+    if x in memo:
+        return memo[x]
+    if x <= 2:
+        f = 1
     else:
-        return fibonacci(x - 1) + fibonacci(x - 2)
+        f = fibonacci(x - 1) + fibonacci(x - 2)
+    memo[x] = f
+    return f
 
 
 def main():
